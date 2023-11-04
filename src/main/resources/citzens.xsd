@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://gofar.com/ws"
+        xmlns:tns="http://gofar.com/ws"
+        elementFormDefault="qualified"
+>
+    <xs:element name="getCitizenInfoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cni" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCitizenInfoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="data" type="tns:citizen" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="bloodGroup">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ARP"/>
+            <xs:enumeration value="BRP"/>
+            <xs:enumeration value="ORP"/>
+            <xs:enumeration value="ABRP"/>
+            <xs:enumeration value="ARN"/>
+            <xs:enumeration value="BRN"/>
+            <xs:enumeration value="ORN"/>
+            <xs:enumeration value="ABRN"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="citizen">
+        <xs:sequence>
+            <xs:element name="cni" type="xs:string" />
+            <xs:element name="firstName" type="xs:string" />
+            <xs:element name="lastName" type="xs:string" />
+            <xs:element name="motherName" type="xs:string" />
+            <xs:element name="fatherName" type="xs:string" />
+            <xs:element name="height" type="xs:double" />
+            <xs:element name="job" type="xs:string" />
+            <xs:element name="bloodGroup" type="tns:bloodGroup" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
