@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://gofar.com/ws"
-        xmlns:tns="http://gofar.com/ws"
+        targetNamespace="http://gofar.com/citzens"
+        xmlns:tns="http://gofar.com/citzens"
         elementFormDefault="qualified"
 >
     <xs:element name="getCitizenInfoRequest">
