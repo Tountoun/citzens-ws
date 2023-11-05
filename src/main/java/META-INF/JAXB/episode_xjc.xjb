@@ -5,21 +5,24 @@
 Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 Voir https://eclipse-ee4j.github.io/jaxb-ri 
 Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-Généré le : 2023.11.04 à 02:26:47 AM GMT 
+Généré le : 2023.11.05 à 01:02:45 PM GMT 
 
   -->
-  <bindings scd="x-schema::tns" xmlns:tns="http://gofar.com/ws">
+  <bindings scd="x-schema::tns" xmlns:tns="http://gofar.com/citizens">
     <schemaBindings map="false">
-      <package name="com.gofar.ws"/>
+      <package name="com.gofar.citizens"/>
     </schemaBindings>
     <bindings scd="tns:getCitizenInfoRequest">
-      <class ref="com.gofar.ws.GetCitizenInfoRequest"/>
+      <class ref="com.gofar.citizens.GetCitizenInfoRequest"/>
     </bindings>
     <bindings scd="tns:getCitizenInfoResponse">
-      <class ref="com.gofar.ws.GetCitizenInfoResponse"/>
+      <class ref="com.gofar.citizens.GetCitizenInfoResponse"/>
     </bindings>
     <bindings scd="~tns:citizen">
-      <class ref="com.gofar.ws.Citizen"/>
+      <class ref="com.gofar.citizens.Citizen"/>
+    </bindings>
+    <bindings scd="~tns:bloodGroup">
+      <typesafeEnumClass ref="com.gofar.citizens.BloodGroup"/>
     </bindings>
   </bindings>
 </bindings>
