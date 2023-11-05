@@ -38,10 +38,10 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "cni"
 })
-@XmlRootElement(name = "getCitizenInfoRequest")
+@XmlRootElement(namespace = "http://gofar.com/citizens", name = "getCitizenInfoRequest")
 public class GetCitizenInfoRequest {
 
-    @XmlElement(required = true)
+    @XmlElement(namespace = "http://gofar.com/citizens", required = true)
     protected String cni;
 
     /**
