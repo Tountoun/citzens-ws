@@ -2,7 +2,7 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2023.11.04 à 02:57:57 AM GMT 
+// Généré le : 2023.11.08 à 02:34:20 PM GMT 
 //
 
 
@@ -35,7 +35,7 @@ import jakarta.xml.bind.annotation.XmlType;
 @XmlType(name = "bloodGroup")
 @XmlEnum
 public enum BloodGroup {
-    // RP = Rhesus Positive; RN = Rhesus Negative
+
     ARP,
     BRP,
     ORP,

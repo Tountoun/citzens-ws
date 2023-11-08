@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CitizenService {
 
-    public GetCitizenInfoResponse getCitizenInfoResponse(GetCitizenInfoRequest request) {
+    public GetCitizenInfoResponse getCitizenInfoResponse(GetCitizenInfoRequest request) throws Exception {
         GetCitizenInfoResponse response = new GetCitizenInfoResponse();
 
         Citizen citizen = Data.citizens().stream()
