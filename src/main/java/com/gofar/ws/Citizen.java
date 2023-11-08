@@ -2,12 +2,13 @@
 // Ce fichier a été généré par Eclipse Implementation of JAXB, v3.0.0 
 // Voir https://eclipse-ee4j.github.io/jaxb-ri 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2023.11.04 à 02:57:57 AM GMT 
+// Généré le : 2023.11.08 à 02:34:20 PM GMT 
 //
 
 
 package com.gofar.ws;
 
+import javax.xml.datatype.XMLGregorianCalendar;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -32,6 +33,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *         &lt;element name="fatherName" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="height" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *         &lt;element name="job" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="birthDay" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
  *         &lt;element name="bloodGroup" type="{http://gofar.com/ws}bloodGroup"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -50,6 +52,7 @@ import jakarta.xml.bind.annotation.XmlType;
     "fatherName",
     "height",
     "job",
+    "birthDay",
     "bloodGroup"
 })
 public class Citizen {
@@ -67,6 +70,9 @@ public class Citizen {
     protected double height;
     @XmlElement(required = true)
     protected String job;
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar birthDay;
     @XmlElement(required = true)
     @XmlSchemaType(name = "string")
     protected BloodGroup bloodGroup;
@@ -229,6 +235,30 @@ public class Citizen {
      */
     public void setJob(String value) {
         this.job = value;
+    }
+
+    /**
+     * Obtient la valeur de la propriété birthDay.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getBirthDay() {
+        return birthDay;
+    }
+
+    /**
+     * Définit la valeur de la propriété birthDay.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setBirthDay(XMLGregorianCalendar value) {
+        this.birthDay = value;
     }
 
     /**

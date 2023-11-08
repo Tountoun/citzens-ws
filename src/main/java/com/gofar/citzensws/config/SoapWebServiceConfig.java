@@ -35,7 +35,7 @@ public class SoapWebServiceConfig extends WsConfigurerAdapter {
         definition.setSchema(xsdSchema);
         definition.setLocationUri("/ws");
         definition.setPortTypeName("CitizenServicePort");
-        definition.setTargetNamespace("http://gofar.com/citizens");
+        definition.setTargetNamespace("http://gofar.com/ws");
         return definition;
     }
 }
