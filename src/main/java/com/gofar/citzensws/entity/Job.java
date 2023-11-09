@@ -1,11 +1,15 @@
 package com.gofar.citzensws.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "job", uniqueConstraints = {@UniqueConstraint(columnNames = {"name", "domain"})})
+@Getter
+@Setter
 public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,30 +18,6 @@ public class Job {
     private String name;
     @Column(name = "domain", nullable = false)
     private String domain;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDomain() {
-        return domain;
-    }
-
-    public void setDomain(String domain) {
-        this.domain = domain;
-    }
 
     @Override
     public boolean equals(Object o) {
