@@ -2,12 +2,17 @@ package com.gofar.citzensws.entity;
 
 import com.gofar.citzensws.utils.Blood;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Table(name = "citz")
 @Entity
+@Getter
+@Setter
 public class Citizen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,13 +38,20 @@ public class Citizen {
     @Column(name = "blood")
     @Enumerated(value = EnumType.STRING)
     private Blood group;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "job_id")
+    private Job job;
 
-
-    public void setId(Long id) {
-        this.id = id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Citizen citizen = (Citizen) o;
+        return cin.equals(citizen.cin);
     }
 
-    public Long getId() {
-        return id;
+    @Override
+    public int hashCode() {
+        return Objects.hash(cin);
     }
 }
