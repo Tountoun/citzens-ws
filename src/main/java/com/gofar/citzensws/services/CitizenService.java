@@ -3,6 +3,7 @@ package com.gofar.citzensws.services;
 import com.gofar.citzensws.entity.Citizen;
 import com.gofar.citzensws.repository.CitizenRepository;
 import com.gofar.citzensws.utils.LocalDateXmlConverter;
+import com.gofar.ws.BloodGroup;
 import com.gofar.ws.GetCitizenInfoRequest;
 import com.gofar.ws.GetCitizenInfoResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,11 @@ public class CitizenService {
         wsCitz.setCni(citizen.getCin());
         wsCitz.setFirstName(citizen.getFirstName());
         wsCitz.setLastName(citizen.getLastName());
+        BloodGroup bloodGroup = BloodGroup.fromValue(citizen.getGroup().name());
+
         wsCitz.setBirthDay(LocalDateXmlConverter.marshal(citizen.getBirthDay()));
         wsCitz.setHeight(citizen.getHeight());
+        wsCitz.setBloodGroup(bloodGroup);
         if (citizen.isFatherPresent())
             wsCitz.setFatherName(citizen.getFather().getLastName() + " " + citizen.getFather().getFirstName());
         if (citizen.isMotherPresent())
