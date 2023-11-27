@@ -21,7 +21,7 @@ public class CitizenRowMapper implements RowMapper<Citizen> {
         Citizen father = new Citizen();
         father.setId(rs.getLong("father_id"));
         Citizen mother = new Citizen();
-        mother.setId(rs.getLong("father_id"));
+        mother.setId(rs.getLong("mother_id"));
         citizen.setFather(father);
         citizen.setMother(mother);
         return citizen;
